@@ -3,11 +3,11 @@ import { getDictionary } from "@/lib/i18n";
 import StartButton from "@/components/StartButton";
 
 interface HomePageProps {
-  params: Promise<{ locale: Locale }>;
+  params: { locale: Locale };
 }
 
 export default async function HomePage({ params }: HomePageProps) {
-  const { locale } = await params;
+  const { locale } = params;
   const dict = await getDictionary(locale);
   const t = dict.home;
 

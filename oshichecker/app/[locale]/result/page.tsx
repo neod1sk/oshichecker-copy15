@@ -11,12 +11,12 @@ import groupsData from "@/data/groups.json";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://oshichecker.example.com";
 
 interface ResultPageProps {
-  params: Promise<{ locale: Locale }>;
+  params: { locale: Locale };
 }
 
 // OGPメタデータを生成
 export async function generateMetadata({ params }: ResultPageProps): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale } = params;
   
   const titles = {
     ja: "診断結果 | 推しチェッカー",

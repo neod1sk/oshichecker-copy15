@@ -51,7 +51,8 @@ export interface QuestionOption {
   textEn?: string;
   scoreKey: string; // 対応する属性キー（例: "cute", "cool"）
   scoreValue?: number; // 加算スコア（デフォルト: 1）
-  scores?: Record<string, number>; // 複数キー加点が必要な場合に使用
+  // 一部の選択肢は特定キーだけ持つため、柔軟に扱えるよう Partial にする
+  scores?: Partial<Record<string, number>>; // 複数キー加点が必要な場合に使用
 }
 
 // ===========================================

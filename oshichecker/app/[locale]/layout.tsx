@@ -12,14 +12,14 @@ export function generateStaticParams() {
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
-  params: Promise<{ locale: Locale }>;
+  params: { locale: Locale };
 }
 
 export default async function LocaleLayout({
   children,
   params,
 }: LocaleLayoutProps) {
-  const { locale } = await params;
+  const { locale } = params;
   const dict = await getDictionary(locale);
   const footerText = dict.home?.footer || "© 2026 推しチェッカー";
 

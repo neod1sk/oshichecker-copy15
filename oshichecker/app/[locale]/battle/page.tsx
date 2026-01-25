@@ -3,11 +3,11 @@ import { getDictionary } from "@/lib/i18n";
 import BattleClient from "@/components/battle/BattleClient";
 
 interface BattlePageProps {
-  params: Promise<{ locale: Locale }>;
+  params: { locale: Locale };
 }
 
 export default async function BattlePage({ params }: BattlePageProps) {
-  const { locale } = await params;
+  const { locale } = params;
   const dict = await getDictionary(locale);
 
   return (
