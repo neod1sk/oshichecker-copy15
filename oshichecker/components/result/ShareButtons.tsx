@@ -37,35 +37,86 @@ export default function ShareButtons({
 
   // シェアテキストを生成
   const generateShareText = (): string => {
-    const intro = locale === "ko"
-      ? "오시체커로 진단했더니..."
-      : locale === "en"
-      ? "My Oshi Checker results..."
-      : "推しチェッカーで診断したら…";
-
     const rankEmojis = ["👑", "🥈", "🥉"];
-    const rankLabels = locale === "ko"
-      ? ["1위", "2위", "3위"]
-      : locale === "en"
-      ? ["1st", "2nd", "3rd"]
-      : ["1位", "2位", "3位"];
 
-    const results = topMembers
-      .slice(0, 3)
-      .map((candidate, index) => {
+    const rankLabels =
+      locale === "ko"
+        ? ["1위", "2위", "3위"]
+        : locale === "en"
+          ? ["1st", "2nd", "3rd"]
+          : ["1位", "2位", "3位"];
+
+    const buildResultLines = (withRankLabel: boolean): string[] => {
+      return topMembers.slice(0, 3).map((candidate, index) => {
         const memberName = getLocalizedName(candidate.member, locale);
         const groupName = getGroupName(candidate.member.groupId);
-        return `${rankEmojis[index]} ${rankLabels[index]}: ${memberName}${groupName ? `（${groupName}）` : ""}`;
-      })
-      .join("\n");
+        const suffix = groupName ? `（${groupName}）` : "";
+        if (withRankLabel) {
+          // ko/en の既存フォーマット維持（rank label を含む）
+          return `${rankEmojis[index]} ${rankLabels[index]}: ${memberName}${suffix}`;
+        }
+        // ja の新フォーマット（rank label なし）
+        return `${rankEmojis[index]} ${memberName}${suffix}`;
+      });
+    };
 
-    const hashtags = locale === "ko"
-      ? "#오시체커 #한국인디아이돌 #최애진단"
-      : locale === "en"
-      ? "#OshiChecker #KUndergroundIdol #BiasDiagnosis"
-      : "#推しチェッカー #韓国地下アイドル #推し診断";
+    // 日本語（ja）のみ、指定の完成形に変更する（ko/enは絶対に変更しない）
+    if (locale === "ja") {
+      const fixedJaUrl = "https://oshichecker2.vercel.app/ja";
+      const resultLines = buildResultLines(false);
+      return [
+        "【韓国地下アイドル推し診断】",
+        "",
+        "私の結果はこれ👇",
+        ...resultLines,
+        "",
+        "あなたの1位は誰だった？",
+        "結果リプで教えてほしい👀",
+        "#推しチェッカー #韓国地下アイドル",
+        fixedJaUrl,
+      ].join("\n");
+    }
 
-    return `${intro}\n\n${results}\n\n${hashtags}\n${SITE_URL}`;
+    // ここから先は ko/en のみ（ja は絶対に変更しない）
+    const buildRankedLinesNoRankLabel = (): string[] => {
+      return topMembers.slice(0, 3).map((candidate, index) => {
+        const memberName = getLocalizedName(candidate.member, locale);
+        const groupName = getGroupName(candidate.member.groupId);
+        const suffix = groupName ? `（${groupName}）` : "";
+        // 指定テンプレに合わせ、rank label（1위/1st/1位 等）は付けない
+        return `${rankEmojis[index]} ${memberName}${suffix}`;
+      });
+    };
+
+    if (locale === "ko") {
+      const fixedKoUrl = "https://oshichecker2.vercel.app/ko";
+      const rankedLines = buildRankedLinesNoRankLabel();
+      return [
+        "【지하아이돌 오시 진단】",
+        "",
+        "제 결과는 이거예요👇",
+        ...rankedLines,
+        "",
+        "여러분의 1위는 누구였어요?",
+        "댓글로 알려주세요👀",
+        "#오시체커 #지하아이돌",
+        fixedKoUrl,
+      ].join("\n");
+    }
+
+    // locale === "en"
+    const fixedEnUrl = "https://oshichecker2.vercel.app/en";
+    const rankedLines = buildRankedLinesNoRankLabel();
+    return [
+      "【Korean Underground Idol Bias Test】",
+      "",
+      "Here is my result👇",
+      ...rankedLines,
+      "",
+      "Who was your #1?",
+      "Let me know your result in the replies 👀",
+      fixedEnUrl,
+    ].join("\n");
   };
 
   // Xでシェア
