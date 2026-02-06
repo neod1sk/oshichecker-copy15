@@ -3,8 +3,8 @@
     "id": "q_genre_worldview",
     "type": "multi",
     "minSelect": 1,
-    "maxSelect": 2,
-    "text": "好きなジャンル\n（※最大2つまで）",
+    "maxSelect": 3,
+    "text": "好きなジャンル（※最大3つまで）",
     "textKo": "좋아하는 장르\n（*최대 2개）",
     "textEn": "Favorite genres / worlds (choose up to 2)",
     "options": [
@@ -49,16 +49,6 @@
         }
       },
       {
-        "id": "dark",
-        "text": "地雷／闇かわ系（ダーク・世界観）",
-        "textKo": "지뢰계 (세계관 중시)",
-        "textEn": "Dark Cute Style",
-        "scoreKey": "genre_dark",
-        "scores": {
-          "genre_dark": 1
-        }
-      },
-      {
         "id": "gothic",
         "text": "ゴシック系（退廃美・荘厳） ",
         "textKo": "고딕형 (퇴폐/다크 월드)",
@@ -76,16 +66,6 @@
         "scoreKey": "genre_cyber",
         "scores": {
           "genre_cyber": 1
-        }
-      },
-      {
-        "id": "magical",
-        "text": "魔法少女系（可愛い×闇要素）",
-        "textKo": "마법소녀형 (귀여움×다크 요소)",
-        "textEn": "Magical Girl (Cute × Dark)",
-        "scoreKey": "genre_magical",
-        "scores": {
-          "genre_magical": 1
         }
       }
     ]
@@ -132,14 +112,6 @@
         }
       },
       {
-        "id": "artist_ange_reve",
-        "text": "Ange☆Reve",
-        "scoreKey": "artist_ange_reve",
-        "scores": {
-          "artist_ange_reve": 1
-        }
-      },
-      {
         "id": "artist_antithese",
         "text": "Antithese（アンチテーゼ）",
         "scoreKey": "artist_antithese",
@@ -153,6 +125,14 @@
         "scoreKey": "artist_appare!",
         "scores": {
           "artist_appare!": 1
+        }
+      },
+      {
+        "id": "artist_arca",
+        "text": "arca（アルカ）",
+        "scoreKey": "artist_arca",
+        "scores": {
+          "artist_arca": 1
         }
       },
       {
@@ -348,14 +328,6 @@
         }
       },
       {
-        "id": "artist_hiragana_kamiyado",
-        "text": "HIRAGANA KAMIYADO",
-        "scoreKey": "artist_hiragana_kamiyado",
-        "scores": {
-          "artist_hiragana_kamiyado": 1
-        }
-      },
-      {
         "id": "artist_honey_spice_re",
         "text": "Honey Spice Re.（ハニースパイスRe.）",
         "scoreKey": "artist_honey_spice_re",
@@ -397,7 +369,7 @@
       },
       {
         "id": "artist_jams_collection",
-        "text": "Jams Collection",
+        "text": "Jams Collection（ジャムズ）",
         "scoreKey": "artist_jams_collection",
         "scores": {
           "artist_jams_collection": 1
@@ -553,6 +525,14 @@
         "scoreKey": "artist_merry_bad_tune",
         "scores": {
           "artist_merry_bad_tune": 1
+        }
+      },
+      {
+        "id": "artist_miis",
+        "text": "MiiS",
+        "scoreKey": "artist_miis",
+        "scores": {
+          "artist_miis": 1
         }
       },
       {
@@ -820,6 +800,14 @@
         }
       },
       {
+        "id": "artist_yoroz",
+        "text": "YOLOZ",
+        "scoreKey": "artist_yoroz",
+        "scores": {
+          "artist_yoroz": 1
+        }
+      },
+      {
         "id": "artist_yosugala",
         "text": "yosugala",
         "scoreKey": "artist_yosugala",
@@ -889,10 +877,10 @@
     "id": "q_face_animal",
     "type": "multi",
     "minSelect": 1,
-    "maxSelect": 2,
-    "text": "好きな顔の系統\n（※最大2つまで）",
-    "textKo": "좋아하는 얼굴상\n（*최대 2개）",
-    "textEn": "Preferred Face Vibe\n(up to 2)",
+    "maxSelect": 3,
+    "text": "好きな顔の系統\n（※最大3つまで）",
+    "textKo": "좋아하는 얼굴상\n（*최대 3개）",
+    "textEn": "Preferred Face Vibe\n(up to 3)",
     "options": [
       {
         "id": "cat",
@@ -925,16 +913,6 @@
         }
       },
       {
-        "id": "tanuki",
-        "text": "タヌキ顔",
-        "textKo": "너구리상",
-        "textEn": "Tanuki-type face",
-        "scoreKey": "face_raccoon_dog",
-        "scores": {
-          "face_raccoon_dog": 1
-        }
-      },
-      {
         "id": "fox",
         "text": "キツネ顔",
         "textKo": "여우상",
@@ -962,16 +940,6 @@
         "scoreKey": "face_chick",
         "scores": {
           "face_chick": 1
-        }
-      },
-      {
-        "id": "bird",
-        "text": "小鳥顔",
-        "textKo": "코토리상",
-        "textEn": "Little-bird-type face",
-        "scoreKey": "face_bird",
-        "scores": {
-          "face_bird": 1
         }
       }
     ]

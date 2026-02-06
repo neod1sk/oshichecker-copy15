@@ -364,8 +364,7 @@ const handleSkipMulti = () => {
           selectedOptionIds={isMulti ? selectedOptionIds : undefined}
           onSubmitMulti={isMulti ? handleSubmitMulti : undefined}
           onSkipMulti={
-            isMulti &&
-            (currentQuestion.id === "q_cover_artist" || currentQuestion.id === "q_genre_worldview")
+            isMulti && (state.currentQuestionIndex <= 2 || state.currentQuestionIndex === 5)
               ? handleSkipMulti
               : undefined
           }
