@@ -1325,36 +1325,6 @@
     }
   },
   {
-    "id": "member-39",
-    "name": "しゅしゅ",
-    "nameKo": "슈슈",
-    "nameEn": "SHUSHU",
-    "groupId": "EITSUKU",
-    "xUrl": "https://x.com/EITSUKU_SHUSHU",
-    "photoUrl": "https://assets.st-note.com/img/1761487903-R8M2QHjZbpyIGXKgDrk4hYfu.jpg?width=1200",
-    "tags": [
-      "cute",
-      "growth",
-      "facial"
-    ],
-    "scores": {
-      "genre_orthodox": 2,
-      "genre_magical": 1,
-      "face_cat": 1,
-      "cute": 1,
-      "youthful": 1,
-      "growth": 2,
-      "facial": 1,
-      "kind": 2,
-      "talk": 2
-    },
-    "jpSupport": "unknown",
-    "covers": {
-      "artist_the_world_standard": 2,
-      "artist_kyururin_tte_shitemite": 1
-    }
-  },
-  {
     "id": "member-43",
     "name": "える",
     "nameKo": "에루",
