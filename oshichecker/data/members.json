@@ -6202,5 +6202,38 @@
       "artist_yoroz": 1,
       "artist_miis": 1
     }
+  },
+  {
+    "id": "member-192",
+    "name": "ある",
+    "nameKo": "아루",
+    "nameEn": "ARU",
+    "groupId": "EITSUKU",
+    "xUrl": "https://x.com/EITSUKU_ARU",
+    "photoUrl": "https://assets.st-note.com/img/1772744527-iH2ITpSPoF7Vn84l0ODtkvsb.jpg?width=1200",
+    "tags": [
+      "idol_polished",
+      "presence",
+      "growth"
+    ],
+    "scores": {
+      "genre_orthodox": 3,
+      "face_cat": 2,
+      "cute": 3,
+      "pure": 2,
+      "idol_polished": 3,
+      "growth": 2,
+      "presence": 3,
+      "comfort": 2,
+      "kind": 2
+    },
+    "jpSupport": "ok",
+    "covers": {
+      "artist_the_world_standard": 2,
+      "artist_kyururin_tte_shitemite": 1,
+      "artist_8bit": 1,
+      "artist_cho_tokimeki_sendenbu": 1,
+      "artist_ange_reve": 1
+    }
   }
 ]
