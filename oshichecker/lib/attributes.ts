@@ -56,6 +56,7 @@ export const ATTRIBUTE_DEFINITIONS = [
   { key: "stability", category: "performance", label: { ja: "安定感", ko: "안정감", en: "Stability" } },
   { key: "growth", category: "performance", label: { ja: "成長性", ko: "성장성", en: "Growth" } },
   { key: "presence", category: "performance", label: { ja: "存在感", ko: "존재감", en: "Presence" } },
+  { key: "presence_cam", category: "performance", label: { ja: "カメラ映え", ko: "카메라빨", en: "Camera Presence" } },
   { key: "facial", category: "performance", label: { ja: "表情管理", ko: "표정 관리", en: "Facial control" } },
   { key: "charisma", category: "performance", label: { ja: "カリスマ", ko: "카리스마", en: "Charisma" } },
 

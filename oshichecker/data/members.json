@@ -6213,7 +6213,7 @@
     "photoUrl": "https://assets.st-note.com/img/1772744527-iH2ITpSPoF7Vn84l0ODtkvsb.jpg?width=1200",
     "tags": [
       "idol_polished",
-      "presence",
+      "presence_cam",
       "growth"
     ],
     "scores": {
@@ -6223,7 +6223,7 @@
       "pure": 2,
       "idol_polished": 3,
       "growth": 2,
-      "presence": 3,
+      "presence_cam": 3,
       "comfort": 2,
       "kind": 2
     },
