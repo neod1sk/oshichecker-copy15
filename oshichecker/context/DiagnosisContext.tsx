@@ -57,12 +57,37 @@ function loadStateFromStorage(): DiagnosisState {
       const parsed = JSON.parse(saved) as DiagnosisState;
       // 基本的な検証
       if (typeof parsed.currentQuestionIndex === "number") {
+        // データ更新で削除/非表示になったメンバーが、古いsessionStorageに残っている場合がある。
+        // ここでサニタイズして、結果や候補に表示されないようにする。
+        const HIDDEN_MEMBER_IDS = new Set<string>(["member-39"]);
+        const sanitizeCandidates = (arr: DiagnosisState["candidates"]) =>
+          Array.isArray(arr)
+            ? arr.filter((c) => c?.member?.id && !HIDDEN_MEMBER_IDS.has(c.member.id))
+            : [];
+        const sanitizeRanking = (arr: DiagnosisState["finalRanking"]) =>
+          Array.isArray(arr)
+            ? arr.filter((c) => c?.member?.id && !HIDDEN_MEMBER_IDS.has(c.member.id))
+            : [];
+        const sanitizeBattleRecords = (arr: DiagnosisState["battleRecords"]) =>
+          Array.isArray(arr)
+            ? arr.filter(
+                (r) =>
+                  r &&
+                  !HIDDEN_MEMBER_IDS.has(r.memberA) &&
+                  !HIDDEN_MEMBER_IDS.has(r.memberB) &&
+                  !HIDDEN_MEMBER_IDS.has(r.winnerId)
+              )
+            : [];
+
         return {
           ...initialState,
           ...parsed,
           koreanLevel: parsed.koreanLevel ?? "none",
           preferJapaneseSupport:
             parsed.preferJapaneseSupport ?? defaultPreferForLevel(),
+          candidates: sanitizeCandidates(parsed.candidates),
+          finalRanking: sanitizeRanking(parsed.finalRanking),
+          battleRecords: sanitizeBattleRecords(parsed.battleRecords),
         };
       }
     }
